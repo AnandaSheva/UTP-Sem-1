@@ -1,0 +1,122 @@
+#include <iostream>
+using namespace std;
+//membuat variabel
+int jumlah; 
+int total(){
+	int a = jumlah;
+}
+//membuat header
+void header(){
+	cout <<"++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"<<endl;
+	cout <<"||\t\t\t\t\t                      \t\t\t\t\t||"<<endl;
+	cout <<"||\t\t\t\t\tWELCOME TO DFS COM STORE \t\t\t\t||"<<endl;
+	cout <<"||\t\t\t\t\t                      \t\t\t\t\t||"<<endl;
+	cout <<"++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"<<endl; 
+}
+
+void pilih_laptop(){
+	cout <<"Laptop yang kamu ambil \t\t : ";
+}
+
+void closeHeader(){
+	cout <<"=========================================================="<<endl;
+	cout <<"||\tTERIMA KASIH SUDAH BERBELANJA DI TOKO KAMI\t||"<<endl;
+	cout <<"||\t\t   HAVE A NICE DAY ^_^\t\t\t||"<<endl;
+	cout <<"=========================================================="<<endl<<endl;
+	cout <<"Anggota Kelompok 7:"<<endl;
+	cout <<"ANANDA SHEVA HIDAYAT(2217051096)\nDEDE JUNIAR PUTRA(2217051015)\nFARID SIDHIQ(2257051028)";
+}
+//membuat 
+int main (){
+	
+	string nama, merklaptop, yes;
+	int jmltrans, kodelaptop;
+	int harga[10], bayar, minus, kurang;
+	
+	do {
+	system("CLS");
+	system("COLOR 06");	
+	header (); 
+	cout <<endl; 
+	
+
+	cout << "BERIKUT ADALAH LAPTOP YANG AKAN DI FLASHSALE PADA 11/11 :"<<endl; 
+	cout <<endl;
+	cout << "1.  Lenovo Ideapad Slim 3 4/256SSD\tONLY!!!\t Rp.5.999.000" <<endl;
+	cout << "2.  Dell Inspiron 3511 4/256SSD \tONLY!!!\t Rp.6.499.000"<<endl;
+	cout << "3.  Asus Vivobook 15 4/256SSD\t\tONLY!!!\t Rp.8.499.000" <<endl;
+	cout << "4.  HP Pavilion x360 8/512SSD\t\tONLY!!!\t Rp.9.799.000"<<endl; 
+	cout << "5.  Asus TUF A15 8/512SSD\t\tONLY!!!\t Rp.10.999.000" <<endl;
+	cout << "6.  Acer Nitro AN15 8/512SSD\t\tONLY!!!\t Rp.11.249.000"<<endl;
+	cout << "7.  Lenovo Ideapad Gaming 3 8/512SSD\tONLY!!!\t Rp.13.499.000"<<endl;
+	cout << "8.  HP Pavilion Gaming 12/512SSD\t\ONLY!!!\t Rp.16.499.000"<<endl;
+	cout << "9.  ROG Strix G15 16/512SSD\t\tONLY!!!\t Rp.17.799.000"<<endl;
+	cout << "10. Lenovo Legion 5 16/512SSD  \t\tONLY!!!\t Rp.18.499.000"<<endl<<endl;
+	cout << "NOTED : HARGA SUDAH TERMASUK PAJAK!"<<endl;
+	cout <<endl;
+	cout << "Username Customer\t : "; getline(cin.ignore(), nama);
+	cout << "Jumlah Pembelian\t : "; cin >> jmltrans;
+	cout <<endl;
+	
+	for (int i=1; i<=jmltrans; i++){
+			cout << "Pilihan Laptop ke - " << i <<endl; 
+			cout << "Opsi ((1)(2)(3)(4)(5)(6)(7)(8)(9)(10)) : "; cin >> kodelaptop;
+		if (kodelaptop == 1){
+			pilih_laptop(); cout << "Asus Vivobook 15 4/256SSD"<<endl;
+			harga[i]=8499000;
+		} else if (kodelaptop == 2){
+			pilih_laptop(); cout << "Asus TUF A15 8/512SSD"<<endl;
+			harga[i]=10999000;
+		} else if (kodelaptop == 3){
+			pilih_laptop(); cout << "Lenovo Ideapad Gaming 3 8/512SSD"<<endl; 
+			harga[i]=13499000;
+		} else if (kodelaptop == 4){
+			pilih_laptop(); cout << "Acer Nitro AN15 8/512SSD"<<endl; 
+			harga[i]=11249000;
+		} else if (kodelaptop == 5){
+			pilih_laptop(); cout << "Lenovo Ideapad Slim 3 4/256SSD"<<endl; 
+			harga[i]=5999000;
+		}  else if (kodelaptop == 6){
+			pilih_laptop(); cout << "HP Pavilion x360 8/512SSD"<<endl; 
+			harga[i]=9799000;
+		}	else if (kodelaptop == 7){
+			pilih_laptop(); cout << "HP Pavilion Gaming 12/512SSD"<<endl; 
+			harga[i]=16499000;
+		}	else if (kodelaptop == 8){
+			pilih_laptop(); cout << "ROG Strix G15 16/512SSD"<<endl; 
+			harga[i]=17799000;
+		}	else if (kodelaptop == 9){
+			pilih_laptop(); cout << "Dell Inspiron 3511 4/256SSD"<<endl; 
+			harga[i]=6499000;
+		}	else if (kodelaptop == 10){
+			pilih_laptop(); cout << "Lenovo Legion 5 16/512SSD"<<endl; 
+			harga[i]=18000000;
+		}	else {
+			cout << "Opsi yang anda masukkan tidak valid" <<endl;
+			harga[i]=0;
+		}
+		jumlah += harga[i];
+	}
+	
+	cout <<endl; 
+	cout << "Total Pembayaran\t\t\t\t : " << "Rp. " << total() <<endl; 
+	cout << "Bayar\t\t\t\t\t\t : " << "Rp. "; cin >> bayar;
+	while (bayar < total())
+	{
+		minus = total() - bayar;
+		cout << "Uang anda tidak cukup! Silahkan bayar kembali\t : Rp. " << minus << endl;
+		cout << "Bayar Kembali!\t\t\t\t\t : " << "Rp. "; cin >> kurang;
+		bayar += kurang;
+	}
+		cout << "Kembali\t\t\t\t\t\t : " << "Rp. " << bayar - total() <<endl; 
+		cout <<endl;
+		cout << "Ingin Membeli lagi? [Y/T]\t\t\t : "; cin >> yes; 
+		cout <<endl;
+		jumlah = 0;
+	}
+	while (yes == "Y" || yes == "y");
+	cout <<endl; 
+	closeHeader();
+	
+	return 0; 
+}
